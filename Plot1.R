@@ -18,11 +18,14 @@ if(!exists("SCC")){
 
 aggTotalByYear <- aggregate(Emissions ~ year, NEI, sum)
 
+## set working directory
+setwd("~/Coursera/Data Science/Exploratory Data Analysis/Week 4")
+
 png("./plot1.png")
 barplot(height = aggTotalByYear$Emissions, 
         names.arg = aggTotalByYear$year, 
         xlab = "years", 
-        ylab = expression('Total PM'[2.5]*' emission'), 
-        main = expression('Total PM'[2.5]*' emission at various years'))
+        ylab = expression('Total PM'[2.5]*' Emission'), 
+        main = expression('Total PM'[2.5]*' Emission at various years'))
 dev.off()
 
